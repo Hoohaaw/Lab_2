@@ -33,3 +33,19 @@ function containsSpecialChar(str) {
     throw new Error("String must contain at least one special character");
   }
 }
+
+function doesNotContainWhitespace(str) {
+  if (str ==! /\s/.test(str)) {
+    throw new Error("String must not contain whitespace characters");
+  }
+}
+
+function containsSameCharacter(str) {
+  const firstChar = str[0];
+  for (let i = 1; i < str.length; i++) {
+    if (str[i] !== firstChar) {
+      return;
+    }
+  }
+  throw new Error("String must not contain just one letter");
+}
