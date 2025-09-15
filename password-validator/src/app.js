@@ -5,6 +5,12 @@ function validateString(str) {
 }
 
 function validateLength(str, minLength, maxLength) {
+  if (!minLength) {
+    throw new Error("A number for minLength must be sent as argument");
+  }
+  if (!maxLength) {
+    throw new Error("A number for maxLength must be sent as argument");
+  }
   if (str.length < minLength || str.length > maxLength) {
     throw new RangeError(`String length must be between ${minLength} and ${maxLength}`);
   }
