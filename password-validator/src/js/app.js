@@ -13,8 +13,7 @@ function validateLength(str, minLength, maxLength) {
 function containsUppercase(str) {
   if (str ==! /[A-Z]/.test(str)) {
     throw new Error("String must contain at least one uppercase letter");
-  }
-    
+  } 
 }
 
 function containsLowercase(str) {
@@ -48,4 +47,10 @@ function containsSameCharacter(str) {
     }
   }
   throw new Error("String must not contain just one letter");
+}
+
+function passwordEqualToUsername(password, username) {
+  if (password === username) {
+    throw new Error("Password must not be equal to username");
+  }
 }
