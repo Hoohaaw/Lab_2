@@ -50,6 +50,9 @@ function containsSameCharacter(str) {
 }
 
 function passwordEqualToUsername(password, username) {
+  if (!username) {
+    throw new Error("Username must be sent as argument");
+  }
   if (password === username) {
     throw new Error("Password must not be equal to username");
   }
