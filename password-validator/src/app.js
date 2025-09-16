@@ -21,6 +21,9 @@ class PasswordValidator {
     if (str.length < minLength || str.length > maxLength) {
       throw new RangeError(`String length must be between ${minLength} and ${maxLength}`);
     }
+    else {
+      return true;
+    }
   }
 
   containsUppercase(str) {
