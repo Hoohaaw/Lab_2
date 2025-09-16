@@ -6,6 +6,8 @@
     "jest": "^30.1.3"
   },
   "scripts": {
-    "test": "jest"
-  }
+    "test": "jest",
+    "start": "node password-validator/src/test.js"
+  },
+  "type": "module"
 }
