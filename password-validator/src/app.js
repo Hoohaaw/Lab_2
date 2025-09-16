@@ -6,6 +6,8 @@ class PasswordValidator {
   validateString(str) {
     if (typeof str !== "string") {
       throw new TypeError("Input must be a string");
+    } else {
+      return true;
     }
   }
 
