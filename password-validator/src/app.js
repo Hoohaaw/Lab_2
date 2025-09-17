@@ -26,7 +26,7 @@ class PasswordValidator {
   }
 
   containsUppercase(str) {
-    if (str ==! /[A-Z]/.test(str)) {
+    if (!/[A-Z]/.test(str)) {
       throw new Error("String must contain at least one uppercase letter");
     } else {
       return true;
@@ -34,14 +34,14 @@ class PasswordValidator {
   }
 
   containsLowercase(str) {
-    if (str ==! /[a-z]/.test(str)) {
+    if (!/[a-z]/.test(str)) {
       throw new Error("String must contain at least one lowercase letter");
     } else {
       return true;
     }
   }
   containsDigit(str) {
-    if (str ==! /\d/.test(str)) {
+    if (!/\d/.test(str)) {
       throw new Error("String must contain at least one digit letter");
     } else {
       return true;
@@ -49,7 +49,7 @@ class PasswordValidator {
   }
 
   containsSpecialChar(str) {
-    if (str ==! /[!@#$%^&*(),.?":{}|<>]/.test(str)) {
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(str)) {
       throw new Error("String must contain at least one special character");
     } else {
       return true;
@@ -57,7 +57,7 @@ class PasswordValidator {
   }
 
   doesNotContainWhitespace(str) {
-    if (str ==! /\s/.test(str)) {
+    if (!/\s/.test(str)) {
       throw new Error("String must not contain whitespace characters");
     } else {
       return true;
