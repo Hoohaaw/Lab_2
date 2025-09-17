@@ -1,4 +1,4 @@
-export function blackList() {
+export function blacklist() {
   return [
     "Admin",
     "Password",

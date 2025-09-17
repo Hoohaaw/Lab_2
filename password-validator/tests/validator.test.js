@@ -116,3 +116,14 @@ test("passwordEqualToUsername throws Error if password and username are the same
   }).toThrow(Error);
 });
 
+// Test passwordIsBlacklisted method
+test("passwordIsBlacklisted returns true if password is not blacklisted", () => {
+  expect(validator.passwordIsBlacklisted("Gr33nSk1n123!")).toBe(true);
+});
+
+test("passwordIsBlacklisted throws Error is password is blacklisted", () => {
+  expect(() => {
+    validator.passwordIsBlacklisted("Password");
+  }).toThrow(Error);
+});
+

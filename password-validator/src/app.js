@@ -1,3 +1,5 @@
+import { blacklist } from "./blacklist.js";
+
 class PasswordValidator {
   constructor() {
     this.validations = [];
@@ -37,6 +39,7 @@ class PasswordValidator {
       return true;
     }
   }
+
   containsDigit(str) {
     if (!/\d/.test(str)) {
       throw new Error("String must contain at least one digit letter");
@@ -78,6 +81,14 @@ class PasswordValidator {
     if (password === username) {
       throw new Error("Password must not be equal to username");
     }  else {
+      return true;
+    }
+  }
+
+  passwordIsBlacklisted(str) {
+    if(blacklist().includes(str)) {
+      throw new Error("Password is blacklisted");
+    } else {
       return true;
     }
   }
