@@ -57,7 +57,7 @@ class PasswordValidator {
   }
 
   doesNotContainWhitespace(str) {
-    if (!/\s/.test(str)) {
+    if (/\s/.test(str)) {
       throw new Error("String must not contain whitespace characters");
     } else {
       return true;
