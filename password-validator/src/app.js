@@ -12,11 +12,8 @@ class PasswordValidator {
   }
 
   validateLength(str, minLength, maxLength) {
-    if (!minLength) {
-      throw new Error("A number for minLength must be sent as argument");
-    }
-    if (!maxLength) {
-      throw new Error("A number for maxLength must be sent as argument");
+    if (!minLength || !maxLength) {
+      throw new Error("A number must be sent as argument for min and max length");
     }
     if (str.length < minLength || str.length > maxLength) {
       throw new RangeError(`String length must be between ${minLength} and ${maxLength}`);
