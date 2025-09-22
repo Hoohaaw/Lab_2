@@ -5,6 +5,20 @@ class PasswordValidator {
     this.validations = [];
   }
 
+  validate(password, username) {
+    this.validateString(password);
+    this.validateLength(password, 6, 80);
+    this.containsUppercase(password);
+    this.containsLowercase(password);
+    this.containsDigit(password);
+    this.containsSpecialChar(password);
+    this.doesNotContainWhitespace(password);
+    this.containsSameCharacter(password);
+    this.passwordEqualToUsername(password, username);
+    this.passwordIsBlacklisted(password);
+    return true;
+  }
+
   validateString(str) {
     if (typeof str !== "string") {
       throw new TypeError("Input must be a string");
