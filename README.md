@@ -39,4 +39,6 @@ Automatic testing is done with the Jest framework. As off 09-22 (This will be ve
 - Add configuration options (e.g., set custom min/max length)
 
 <h2>License</h2>
-MIT License. See LICENSE for details
+
+MIT License. See [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+ for details
