@@ -12,18 +12,20 @@ This is a project made entirely made by me, Alex Palm, for the university course
 * WILL BE ADDED LATER *
 
 <h2>Rules in validator</h2>
-| Rule                   | Description                                                                   |
-| ---------------------- | ----------------------------------------------------------------------------- |
-| String type            | Password must be a string value. Throws an error if not a string.             |
-| Length check           | Password length must be between **6 and 80 characters**.                      |
-| Uppercase requirement  | Password must contain **at least one uppercase letter (A–Z)**.                |
-| Lowercase requirement  | Password must contain **at least one lowercase letter (a–z)**.                |
-| Digit requirement      | Password must contain **at least one digit (0–9)**.                           |
-| Special character      | Password must contain **at least one special character** (e.g. `!@#$%^&*`).   |
-| Whitespace restriction | Password must **not contain whitespace** (spaces, tabs, newlines).            |
-| Unique characters      | Password must not consist of just a **single repeated character**.            |
-| Not equal to username  | Password must not be the same as the provided username.                       |
-| Blacklist restriction  | Password must not appear in the configured **blacklist of common passwords**. |
+
+| Rule                   | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| String type            | Password must be a string value. Throws an error if not a string.           |
+| Length check           | Password length must be between **6 and 80 characters**.                    |
+| Uppercase requirement  | Password must contain **at least one uppercase letter (A–Z)**.              |
+| Lowercase requirement  | Password must contain **at least one lowercase letter (a–z)**.              |
+| Digit requirement      | Password must contain **at least one digit (0–9)**.                         |
+| Special character      | Password must contain **at least one special character** (e.g. `!@#$%^&*`). |
+| Whitespace restriction | Password must **not contain whitespace** (spaces, tabs, newlines).          |
+| Unique characters      | Password must not consist of just a **single repeated character**.          |
+| Not equal to username  | Password must not be the same as the provided username.                     |
+| Blacklist restriction  | Password must not appear in the configured **blacklist of common passwords**.|
+
 
 <h2>Bugs/feedback</h2>
 * List off known bugs to be aware off *
