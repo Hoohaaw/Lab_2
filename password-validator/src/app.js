@@ -1,13 +1,13 @@
 import { blacklist } from "./blacklist.js";
-import { numberRange } from "./numberRange.js";
+import { NumberRange } from "./numberRange.js";
 
 class PasswordValidator {
   /**
      * Creates a new PasswordValidator instance.
      */
-  constructor() {
+  constructor(config = {}) {
     this.validations = [];
-    this.numberRange = new numberRange();
+    this.NumberRange = new NumberRange;
   }
 
   /**
@@ -19,7 +19,7 @@ class PasswordValidator {
      */
   validate(password, username) {
     this.validateString(password);
-    this.validateLength(password, this.numberRange.getMinRange(), this.numberRange.getMaxRange());
+    this.validateLength(password, this.NumberRange.getMinRange(), this.NumberRange.getMaxRange());
     this.containsUppercase(password);
     this.containsLowercase(password);
     this.containsDigit(password);

@@ -1,15 +1,15 @@
-export class numberRange {
+export class NumberRange {
   constructor(minStrRange = 6, maxStrRange = 80) {
     this._minStrRange = minStrRange;
     this._maxStrRange = maxStrRange;
   }
 
-  setMinRange(number) {
-    number = minStrRange;
+  setMinRange(_number) {
+    this._minStrRange = _number;
   }
 
-  setMaxRange(number) {
-    number = minStrRange;
+  setMaxRange(_number) {
+    this._maxStrRange = _number;
   }
 
   getMinRange() {
@@ -20,3 +20,4 @@ export class numberRange {
     return this._maxStrRange;
   }
 }
+
