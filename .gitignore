@@ -6,3 +6,6 @@ test.js
 
 # Dependency directories
 node_modules/
+
+# Password validator config file for testing
+password-validator.config.js
