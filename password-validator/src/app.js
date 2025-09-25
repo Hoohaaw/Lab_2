@@ -16,6 +16,10 @@ class PasswordValidator {
     );
   }
 
+  /**
+   * Loads configuration from password-validator.config.js and returns a PasswordValidator instance.
+   * @returns {Promise<PasswordValidator>} A promise that resolves to a PasswordValidator instance.
+   */
   static async loadConfig() {
     const config = await loadConfig();
     return new PasswordValidator(config);
