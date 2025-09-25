@@ -1,5 +1,6 @@
 import { blacklist } from "./blacklist.js";
 import { NumberRange } from "./numberRange.js";
+import { loadConfig } from "./loadConfig.js";
 
 class PasswordValidator {
   /**
@@ -7,7 +8,15 @@ class PasswordValidator {
      */
   constructor(config = {}) {
     this.validations = [];
-    this.NumberRange = new NumberRange;
+    this.config = config;
+    this.NumberRange = new NumberRange(
+      config.minLength || 6,
+      config.maxLength || 80
+    );
+  }
+  static async loadConfig() {
+    const config = await loadConfig();
+    return new PasswordValidator(config);
   }
 
   /**
