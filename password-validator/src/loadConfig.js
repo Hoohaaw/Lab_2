@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url";
 
-export async function loadConfig() {
+async function loadConfig() {
   const configPath = path.resolve(process.cwd(), "password-validator.config.js");
   if (fs.existsSync(configPath)) {
     try {
@@ -14,3 +14,5 @@ export async function loadConfig() {
   }
   return {};
 }
+
+export default loadConfig;

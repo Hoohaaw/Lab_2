@@ -1,4 +1,4 @@
-export class NumberRange {
+class NumberRange {
   constructor(minStrRange, maxStrRange) {
     this._minStrRange = minStrRange;
     this._maxStrRange = maxStrRange;
@@ -21,3 +21,4 @@ export class NumberRange {
   }
 }
 
+export default NumberRange;

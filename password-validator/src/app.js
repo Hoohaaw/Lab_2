@@ -1,6 +1,6 @@
-import { blacklist } from "./blacklist.js";
-import { NumberRange } from "./numberRange.js";
-import { loadConfig } from "./loadConfig.js";
+import  Blacklist  from "./blacklist.js";
+import  NumberRange  from "./numberRange.js";
+import  loadConfig  from "./loadConfig.js";
 
 class PasswordValidator {
   /**
@@ -9,12 +9,13 @@ class PasswordValidator {
   constructor(config = {}) {
     this.validations = [];
     this.config = config;
+    this.blacklist = new Blacklist();
     this.NumberRange = new NumberRange(
       config.minLength || 6,
       config.maxLength || 80
     );
   }
-  
+
   static async loadConfig() {
     const config = await loadConfig();
     return new PasswordValidator(config);
@@ -185,7 +186,7 @@ class PasswordValidator {
      * @throws {Error} If password is blacklisted.
      */
   passwordIsBlacklisted(str) {
-    if(blacklist().includes(str)) {
+    if(blacklist.getBlacklist().includes(str)) {
       throw new Error("Password is blacklisted");
     } else {
       return true;
