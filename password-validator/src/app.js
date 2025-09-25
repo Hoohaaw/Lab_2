@@ -14,6 +14,7 @@ class PasswordValidator {
       config.maxLength || 80
     );
   }
+  
   static async loadConfig() {
     const config = await loadConfig();
     return new PasswordValidator(config);
