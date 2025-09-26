@@ -9,3 +9,21 @@ node_modules/
 
 # Password validator config file for testing
 password-validator.config.js
+
+# Reflections for school assignment
+reflections/
+
+# Coverage reports
+coverage/
+
+# Test files and folders
+password-validator/tests/
+password-validator/src/test.js
+
+# Git and editor config
+.git/
+.gitignore
+
+# Build artifacts
+*.log
+*.tmp

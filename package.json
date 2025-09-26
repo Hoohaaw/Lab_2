@@ -1,15 +1,19 @@
 {
   "name": "password-validator-ap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A password validation library",
   "main": "src/app.js",
   "author": "Alex Palm",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hoohaaw/Lab_2.git"
-    },
-  "keywords": ["password", "validation", "library"],
+    "url": "git+https://github.com/Hoohaaw/Lab_2.git"
+  },
+  "keywords": [
+    "password",
+    "validation",
+    "library"
+  ],
   "devDependencies": {
     "eslint": "^9.35.0"
   },
@@ -20,10 +24,11 @@
     "test": "set NODE_OPTIONS=--experimental-vm-modules && jest",
     "start": "node password-validator/src/test.js",
     "coverage": "set NODE_OPTIONS=--experimental-vm-modules && jest --coverage"
-
   },
-    "jest": {
-    "testMatch": ["**/tests/validator.test.js"]
+  "jest": {
+    "testMatch": [
+      "**/tests/validator.test.js"
+    ]
   },
   "type": "module"
 }
