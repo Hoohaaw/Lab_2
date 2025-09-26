@@ -1,5 +1,7 @@
 class Blacklist {
-  constructor() {}
+  constructor() {
+    this.blacklist = this.getBlackList();
+  }
 
   /**
  * Returns an array of blacklisted passwords.
