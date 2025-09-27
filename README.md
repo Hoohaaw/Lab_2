@@ -1,17 +1,138 @@
-<h2>Password Validator</h2>
+## Password Validator ## 
 A lightweight JavaScript library for validating passwords against common security rules.  
 The validator checks string type, length, character requirements, blacklist membership, and more.
 
-<h2>Student project disclaimer</h2>
-This is a project made entirely made by me, Alex Palm, for the university course 1DV610 at Linneuniversitetet. This is a disclaimer because of that fact. If you were to use this library, use it with caution. However feel free to let me know if there are improvements to be made through the available communication channels here.
+[![npm version](https://img.shields.io/npm/v/password-validator-ap.svg)](https://www.npmjs.com/package/password-validator-ap)
+[![npm downloads](https://img.shields.io/npm/dt/password-validator-ap.svg)](https://www.npmjs.com/package/password-validator-ap)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-<h2>Install</h2>
-* NPM PACKAGE TO BE IMPLEMENTED *
+## Table of Contents
+- [Install](#install)
+- [Usage](#usagecode-examples)
+- [API](#api)
+- [Rules](#rules-in-validator)
+- [Testing](#testingcoverage)
+- [Roadmap](#roadmap)
+- [License](#license)
 
-<h2>Usage/code example</h2>
-* WILL BE ADDED LATER *
+## Install ## 
+npm install password-validator-ap
 
-<h2>Rules in validator</h2>
+## Student project disclaimer ##
+This is a project made entirely by me, Alex Palm, for the university course 1DV610 at Linneuniversitetet. This is a disclaimer because of that fact. If you were to use this library, use it with caution. However feel free to let me know if there are improvements to be made through the available communication channels here.
+
+## Usage/code examples ## 
+
+# Basic usage (no config file): #
+
+```js
+import PasswordValidator from "password-validator-ap";
+
+const validator = new PasswordValidator(); 
+validator.setMinLength(6) // Set the minimum length of the password
+validator.setMaxLength(80) // Set the maximum length of the password
+
+try {
+	validator.validate("MyPassword123!", "myusername");
+	console.log("Password is valid!");
+} catch (err) {
+	console.error("Validation error:", err.message);
+}
+```
+
+# Usage with config file (async): #
+
+```js
+import PasswordValidator from "password-validator-ap";
+
+(async () => {
+	const validator = await PasswordValidator.loadConfig(); // Loads the config file if precent
+	try {
+		validator.validate("MyPassword123!", "myusername");
+		console.log("Password is valid!");
+	} catch (err) {
+		console.error("Validation error:", err.message);
+	}
+})();
+```
+
+# Checking min/max range and blacklist: #
+
+```js
+console.log("Min length:", validator.getMinLength());
+console.log("Max length:", validator.getMaxLength());
+console.log("Blacklist:", validator.getBlacklist());
+```
+
+# Example of config file #
+<password-validator.config.js>
+```js
+export default {
+  minLength: 66,
+  maxLength: 99,
+  blacklist: ["password", "admin", "abc123"], // Add strings to be blacklisted or import array with strings
+};
+```
+
+## API ##
+
+# PasswordValidator #
+
+# Constructor #
+```js
+new PasswordValidator(config = {})
+```
+Creates a new instance.
+- <code>config</code> (object, optional): Configuration object. Supports <code>minLength</code>, <code>maxLength</code>, and <code>blacklist</code>.
+
+<b>static async loadConfig()</b>
+Loads configuration from <code>password-validator.config.js</code> and returns a <code>PasswordValidator</code> instance.
+- <b>Returns:</b> <code>Promise&lt;PasswordValidator&gt;</code>
+
+<b>validate(password, username)</b>
+Validates a password against all rules.
+- <code>password</code> (string): The password to validate.
+- <code>username</code> (string): The username to compare against.
+- <b>Returns:</b> <code>boolean</code> (true if valid)
+- <b>Throws:</b> <code>Error</code>, <code>TypeError</code>, or <code>RangeError</code> if validation fails.
+
+<b>setMinLength(min)</b>
+Sets the minimum password length.
+- <code>min</code> (number): Minimum length.
+
+<b>setMaxLength(max)</b>
+Sets the maximum password length.
+- <code>max</code> (number): Maximum length.
+
+<b>getMinLength()</b>
+Returns the current minimum password length.
+- <b>Returns:</b> <code>number</code>
+
+<b>getMaxLength()</b>
+Returns the current maximum password length.
+- <b>Returns:</b> <code>number</code>
+
+<b>getBlacklist()</b>
+Returns the current blacklist of disallowed passwords.
+- <b>Returns:</b> <code>string[]</code>
+
+<b>Validation Methods (Advanced Usage)</b>
+You can use these methods directly for custom validation flows:
+- <code>validateString(str)</code> — Throws if not a string.
+- <code>validateLength(str, minLength, maxLength)</code> — Throws if length is invalid.
+- <code>containsUppercase(str)</code> — Throws if no uppercase letter.
+- <code>containsLowercase(str)</code> — Throws if no lowercase letter.
+- <code>containsDigit(str)</code> — Throws if no digit.
+- <code>containsSpecialChar(str)</code> — Throws if no special character.
+- <code>doesNotContainWhitespace(str)</code> — Throws if whitespace is present.
+- <code>containsSameCharacter(str)</code> — Throws if all characters are the same.
+- <code>passwordEqualToUsername(password, username)</code> — Throws if password equals username.
+- <code>passwordIsBlacklisted(str)</code> — Throws if password is blacklisted.
+
+
+
+
+## Rules in validator ##
 
 | Rule                   | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
@@ -27,18 +148,18 @@ This is a project made entirely made by me, Alex Palm, for the university course
 | Blacklist restriction  | Password must not appear in the configured **blacklist of common passwords**.|
 
 
-<h2>Bugs/feedback</h2>
+## Bugs/feedback ## 
 * List off known bugs to be aware off *
 
-<h2>Testing/coverage</h2>
+## Testing/coverage ## 
 Automatic testing is done with the Jest framework. As off 09-22 (This will be version later, e.g 1.33.7) the application has 100% coverage
 
-<h2>Roadmap</h2>
+## Roadmap ## 
 - Allow custom validation rules
 - Support multiple errors at once instead of failing on the first
 - Add configuration options (e.g., set custom min/max length)
 
-<h2>License</h2>
+## License ## 
 
 MIT License. See [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
  for details
