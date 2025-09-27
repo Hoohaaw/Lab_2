@@ -58,14 +58,10 @@ class PasswordValidator {
     this.NumberRange.setMaxRange(max);
   }
 
-  getMinLength() {
-    return this.NumberRange.getMinRange();
-  }
-
-  getMaxLength() {
-    return this.NumberRange.getMaxRange();
-  }
-
+  /**
+   * Returns the current blacklist of disallowed passwords.
+   * @returns {string[]} The array of blacklisted password strings.
+   */
   getBlacklist() {
     return this.blacklist.blacklist;
   }
