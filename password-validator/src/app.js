@@ -3,6 +3,7 @@ import  NumberRange  from "./numberRange.js";
 import  loadConfig  from "./loadConfig.js";
 
 class PasswordValidator {
+
   /**
      * Creates a new PasswordValidator instance.
      */
@@ -23,6 +24,50 @@ class PasswordValidator {
   static async loadConfig() {
     const config = await loadConfig();
     return new PasswordValidator(config);
+  }
+
+  /**
+   * Returns the current minimum password length.
+   * @returns {number} The minimum password length.
+   */
+  getMinLength() {
+    return this.NumberRange.getMinRange();
+  }
+
+  /**
+   * Returns the current maximum password length.
+   * @returns {number} The maximum password length.
+   */
+  getMaxLength() {
+    return this.NumberRange.getMaxRange();
+  }
+
+  /**
+     * Sets the minimum password length for validation.
+     * @param {number} min - The minimum length to set.
+     */
+  setMinLength(min) {
+    this.NumberRange.setMinRange(min);
+  }
+
+  /**
+     * Sets the maximum password length for validation.
+     * @param {number} max - The maximum length to set.
+     */
+  setMaxLength(max) {
+    this.NumberRange.setMaxRange(max);
+  }
+
+  getMinLength() {
+    return this.NumberRange.getMinRange();
+  }
+
+  getMaxLength() {
+    return this.NumberRange.getMaxRange();
+  }
+
+  getBlacklist() {
+    return this.blacklist.blacklist;
   }
 
   /**
