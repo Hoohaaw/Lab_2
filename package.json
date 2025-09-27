@@ -15,10 +15,10 @@
     "library"
   ],
   "devDependencies": {
-    "eslint": "^9.35.0"
+    "eslint": "^9.35.0",
+    "jest": "^30.1.3"
   },
   "dependencies": {
-    "jest": "^30.1.3"
   },
   "scripts": {
     "test": "set NODE_OPTIONS=--experimental-vm-modules && jest",
