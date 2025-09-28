@@ -10,7 +10,9 @@ class PasswordValidator {
   constructor(config = {}) {
     this.validations = [];
     this.config = config;
-    this.blacklist = new Blacklist();
+    this.blacklist = new Blacklist(
+      config.blacklist || []
+    );
     this.NumberRange = new NumberRange(
       config.minLength || 6,
       config.maxLength || 80
@@ -231,7 +233,7 @@ class PasswordValidator {
      * @throws {Error} If password is blacklisted.
      */
   passwordIsBlacklisted(str) {
-    if(blacklist.getBlacklist().includes(str)) {
+    if(this.blacklist.getBlacklist().includes(str)) {
       throw new Error("Password is blacklisted");
     } else {
       return true;

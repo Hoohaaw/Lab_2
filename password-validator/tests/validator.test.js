@@ -1,6 +1,6 @@
 import PasswordValidator from "../src/app";
 
-const validator = new PasswordValidator(); 
+const validator = new PasswordValidator();
 
 // Test validateString method
 test("argument is string", () => {
@@ -126,4 +126,3 @@ test("passwordIsBlacklisted throws Error is password is blacklisted", () => {
     validator.passwordIsBlacklisted("Password");
   }).toThrow(Error);
 });
-

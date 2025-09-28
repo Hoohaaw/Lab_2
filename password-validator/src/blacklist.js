@@ -1,13 +1,13 @@
 class Blacklist {
   constructor() {
-    this.blacklist = this.getBlackList();
+    this.blacklist = this.getBlacklist();
   }
 
   /**
  * Returns an array of blacklisted passwords.
  * @returns {string[]} Array of blacklisted password strings.
  */
-  getBlackList() {
+  getBlacklist() {
     return [
       "Admin",
       "Password",
