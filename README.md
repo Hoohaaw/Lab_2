@@ -1,6 +1,6 @@
 ## Password Validator ## 
 A lightweight JavaScript library for validating passwords against common security rules.  
-The validator checks string type, length, character requirements, blacklist membership, and more.
+The validator checks string type, length, character requirements, blacklist, and more.
 
 [![npm version](https://img.shields.io/npm/v/password-validator-ap.svg)](https://www.npmjs.com/package/password-validator-ap)
 [![npm downloads](https://img.shields.io/npm/dt/password-validator-ap.svg)](https://www.npmjs.com/package/password-validator-ap)

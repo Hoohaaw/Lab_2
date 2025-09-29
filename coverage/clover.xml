@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1759084585876" clover="3.2.0">
-  <project timestamp="1759084585876" name="All files">
-    <metrics statements="73" coveredstatements="42" conditionals="39" coveredconditionals="33" methods="26" coveredmethods="14" elements="138" coveredelements="89" complexity="0" loc="73" ncloc="73" packages="1" files="4" classes="4"/>
+<coverage generated="1759152176064" clover="3.2.0">
+  <project timestamp="1759152176064" name="All files">
+    <metrics statements="73" coveredstatements="44" conditionals="39" coveredconditionals="35" methods="26" coveredmethods="14" elements="138" coveredelements="93" complexity="0" loc="73" ncloc="73" packages="1" files="4" classes="4"/>
     <file name="app.js" path="C:\Users\alexp\Desktop\school\1dv610\Lab_2\password-validator\src\app.js">
-      <metrics statements="58" coveredstatements="38" conditionals="35" coveredconditionals="33" methods="18" coveredmethods="11"/>
+      <metrics statements="58" coveredstatements="40" conditionals="35" coveredconditionals="35" methods="18" coveredmethods="11"/>
       <line num="11" count="1" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
@@ -59,24 +59,24 @@
       <line num="222" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="223" count="1" type="stmt"/>
       <line num="225" count="1" type="stmt"/>
-      <line num="236" count="2" type="cond" truecount="0" falsecount="2"/>
-      <line num="237" count="0" type="stmt"/>
-      <line num="239" count="0" type="stmt"/>
+      <line num="236" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="237" count="1" type="stmt"/>
+      <line num="239" count="1" type="stmt"/>
     </file>
     <file name="blacklist.js" path="C:\Users\alexp\Desktop\school\1dv610\Lab_2\password-validator\src\blacklist.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
     </file>
     <file name="loadConfig.js" path="C:\Users\alexp\Desktop\school\1dv610\Lab_2\password-validator\src\loadConfig.js">
       <metrics statements="7" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="8" count="0" type="stmt"/>
-      <line num="9" count="0" type="stmt"/>
-      <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="12" count="0" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
     </file>
     <file name="numberRange.js" path="C:\Users\alexp\Desktop\school\1dv610\Lab_2\password-validator\src\numberRange.js">
       <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
