@@ -152,7 +152,7 @@ https://github.com/Hoohaaw/Lab_2.git
 <br>
 
 ## Testing/coverage ## 
-Automatic testing is done with the Jest framework. As off version 1.0.1 the application has 100% coverage. 
+Automatic testing is done with the Jest framework. As off version 1.0.2 the application has 60-70% coverage. 
 
 ## Roadmap ## 
 - Allow custom validation rules
