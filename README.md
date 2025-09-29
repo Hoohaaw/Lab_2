@@ -6,6 +6,9 @@ The validator checks string type, length, character requirements, blacklist memb
 [![npm downloads](https://img.shields.io/npm/dt/password-validator-ap.svg)](https://www.npmjs.com/package/password-validator-ap)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+## Student project disclaimer ##
+This is a project made entirely by me, Alex Palm, for the university course 1DV610 at Linneuniversitetet. This is a disclaimer because of that fact. If you were to use this library, use it with caution. However feel free to let me know if there are improvements to be made through the available communication channels here.
+
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usagecode-examples)
@@ -18,12 +21,9 @@ The validator checks string type, length, character requirements, blacklist memb
 ## Install ## 
 npm install password-validator-ap
 
-## Student project disclaimer ##
-This is a project made entirely by me, Alex Palm, for the university course 1DV610 at Linneuniversitetet. This is a disclaimer because of that fact. If you were to use this library, use it with caution. However feel free to let me know if there are improvements to be made through the available communication channels here.
-
 ## Usage/code examples ## 
 
-# Basic usage (no config file): #
+## Basic usage (no config file): ##
 
 ```js
 import PasswordValidator from "password-validator-ap";
@@ -46,9 +46,9 @@ try {
 import PasswordValidator from "password-validator-ap";
 
 (async () => {
-	const validator = await PasswordValidator.loadConfig(); // Loads the config file if precent
+	const validator = await PasswordValidator.loadConfig(); // Loads the config file if present
 	try {
-		validator.validate("MyPassword123!", "myusername");
+		validator.validate("MyPassword123!", "myusername"); // Send arguments for validation
 		console.log("Password is valid!");
 	} catch (err) {
 		console.error("Validation error:", err.message);
@@ -59,9 +59,9 @@ import PasswordValidator from "password-validator-ap";
 # Checking min/max range and blacklist: #
 
 ```js
-console.log("Min length:", validator.getMinLength());
-console.log("Max length:", validator.getMaxLength());
-console.log("Blacklist:", validator.getBlacklist());
+console.log("Min length:", validator.getMinLength()); // get set minimum length for valid password
+console.log("Max length:", validator.getMaxLength()); // get set maximum length for valid password
+console.log("Blacklist:", validator.getBlacklist()); // get list of blacklisted passwords
 ```
 
 # Example of config file #
@@ -75,8 +75,6 @@ export default {
 ```
 
 ## API ##
-
-# PasswordValidator #
 
 # Constructor #
 ```js
@@ -130,8 +128,6 @@ You can use these methods directly for custom validation flows:
 - <code>passwordIsBlacklisted(str)</code> — Throws if password is blacklisted.
 
 
-
-
 ## Rules in validator ##
 
 | Rule                   | Description                                                                 |
@@ -150,9 +146,13 @@ You can use these methods directly for custom validation flows:
 
 ## Bugs/feedback ## 
 * List off known bugs to be aware off *
+To send feedback on this library, such as constructive feedback and points of improvement, create a issue on the Github page:
+<br>
+https://github.com/Hoohaaw/Lab_2.git
+<br>
 
 ## Testing/coverage ## 
-Automatic testing is done with the Jest framework. As off 09-22 (This will be version later, e.g 1.33.7) the application has 100% coverage
+Automatic testing is done with the Jest framework. As off version 1.0.1 the application has 100% coverage. 
 
 ## Roadmap ## 
 - Allow custom validation rules
@@ -160,6 +160,5 @@ Automatic testing is done with the Jest framework. As off 09-22 (This will be ve
 - Add configuration options (e.g., set custom min/max length)
 
 ## License ## 
-
 MIT License. See [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
  for details
