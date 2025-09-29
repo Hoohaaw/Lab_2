@@ -18,12 +18,12 @@ This is a project made entirely by me, Alex Palm, for the university course 1DV6
 - [Roadmap](#roadmap)
 - [License](#license)
 
-## Install ## 
+## Install
 npm install password-validator-ap
 
-## Usage/code examples ## 
+### Usage/code examples
 
-## Basic usage (no config file): ##
+### Basic usage (no config file): 
 
 ```js
 import PasswordValidator from "password-validator-ap";
@@ -40,7 +40,7 @@ try {
 }
 ```
 
-# Usage with config file (async): #
+### Usage with config file (async):
 
 ```js
 import PasswordValidator from "password-validator-ap";
@@ -56,7 +56,7 @@ import PasswordValidator from "password-validator-ap";
 })();
 ```
 
-# Checking min/max range and blacklist: #
+## Checking min/max range and blacklist: 
 
 ```js
 console.log("Min length:", validator.getMinLength()); // get set minimum length for valid password
@@ -64,7 +64,7 @@ console.log("Max length:", validator.getMaxLength()); // get set maximum length 
 console.log("Blacklist:", validator.getBlacklist()); // get list of blacklisted passwords
 ```
 
-# Example of config file #
+## Example of config file 
 <password-validator.config.js>
 ```js
 export default {
@@ -76,7 +76,7 @@ export default {
 
 ## API ##
 
-# Constructor #
+### Constructor ###
 ```js
 new PasswordValidator(config = {})
 ```
