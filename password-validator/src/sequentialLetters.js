@@ -1,6 +1,6 @@
-class SequencentialLetters {
+class SequentialLetters {
   constructor() {
-    this.sequentialLetters = getListOfSequentialLetters();
+    this.sequentialLetters = this.getListOfSequentialLetters();
   }
   getListOfSequentialLetters() {
     return [
@@ -29,4 +29,4 @@ class SequencentialLetters {
   }
 }
 
-export default SequencentialLetters;
+export default SequentialLetters;

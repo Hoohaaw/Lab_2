@@ -1,8 +1,7 @@
-import  Blacklist  from "./blacklist.js";
-import  NumberRange  from "./numberRange.js";
-import  loadConfig  from "./loadConfig.js";
-import sequentialLetters
-  from "./sequentialLetters.js";
+import Blacklist  from "./blacklist.js";
+import NumberRange  from "./numberRange.js";
+import loadConfig  from "./loadConfig.js";
+import SequentialLetters from "./sequentialLetters.js";
 
 class PasswordValidator {
 
@@ -19,7 +18,7 @@ class PasswordValidator {
       config.minLength || 6,
       config.maxLength || 80
     );
-    this.sequentialLetters = new sequentialLetters();
+    this.SequentialLetters = new SequentialLetters();
   }
 
   /**
@@ -79,18 +78,26 @@ class PasswordValidator {
      * @throws {Error|TypeError|RangeError} If any validation fails.
      */
   validate(password, username) {
-    this.validateString(password);
-    this.validateLength(password, this.NumberRange.getMinRange(), this.NumberRange.getMaxRange());
-    this.containsUppercase(password);
-    this.containsLowercase(password);
-    this.containsDigit(password);
-    this.containsSpecialChar(password);
-    this.doesNotContainWhitespace(password);
-    this.containsSameCharacter(password);
-    this.passwordEqualToUsername(password, username);
-    this.passwordIsBlacklisted(password);
-    this.passwordContainsSequenceLetters(password);
+    this.validations = [];
+
+    this.validations.push({ name: "validateString", result: this.validateString(password) });
+    this.validations.push({ name: "validateLength", result: this.validateLength(password, this.NumberRange.getMinRange(), this.NumberRange.getMaxRange()) });
+    this.validations.push({ name: "containsUppercase", result: this.containsUppercase(password) });
+    this.validations.push({ name: "containsLowercase", result: this.containsLowercase(password) });
+    this.validations.push({ name: "containsDigit", result: this.containsDigit(password) });
+    this.validations.push({ name: "containsSpecialChar", result: this.containsSpecialChar(password) });
+    this.validations.push({ name: "doesNotContainWhitespace", result: this.doesNotContainWhitespace(password) });
+    this.validations.push({ name: "containsSameCharacter", result: this.containsSameCharacter(password) });
+    this.validations.push({ name: "passwordEqualToUsername", result: this.passwordEqualToUsername(password, username) });
+    this.validations.push({ name: "passwordIsBlacklisted", result: this.passwordIsBlacklisted(password) });
+    this.validations.push({ name: "passwordContainsSequenceLetters", result: this.passwordContainsSequenceLetters(password) });
+
     return true;
+  }
+
+  sendValidationResult(result) {
+    const array = [];
+    this.validations.push(result);
   }
 
   /**
