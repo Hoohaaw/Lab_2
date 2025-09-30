@@ -95,11 +95,6 @@ class PasswordValidator {
     return true;
   }
 
-  sendValidationResult(result) {
-    const array = [];
-    this.validations.push(result);
-  }
-
   /**
      * Checks if input is a string.
      * @param {*} str - The value to check.
