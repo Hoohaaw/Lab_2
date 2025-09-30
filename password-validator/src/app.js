@@ -1,6 +1,8 @@
 import  Blacklist  from "./blacklist.js";
 import  NumberRange  from "./numberRange.js";
 import  loadConfig  from "./loadConfig.js";
+import sequentialLetters
+  from "./sequentialLetters.js";
 
 class PasswordValidator {
 
@@ -17,6 +19,7 @@ class PasswordValidator {
       config.minLength || 6,
       config.maxLength || 80
     );
+    this.sequentialLetters = new sequentialLetters();
   }
 
   /**
@@ -86,6 +89,7 @@ class PasswordValidator {
     this.containsSameCharacter(password);
     this.passwordEqualToUsername(password, username);
     this.passwordIsBlacklisted(password);
+    this.passwordContainsSequenceLetters(password);
     return true;
   }
 
@@ -235,6 +239,20 @@ class PasswordValidator {
   passwordIsBlacklisted(str) {
     if(this.blacklist.getBlacklist().includes(str)) {
       throw new Error("Password is blacklisted");
+    } else {
+      return true;
+    }
+  }
+
+  /**
+     * Checks if password is not blacklisted.
+     * @param {string} str - The password to check.
+     * @returns {boolean} True if password is not in sequence.
+     * @throws {Error} If password is in list of sequence.
+     */
+  passwordContainsSequenceLetters(str) {
+    if (this.sequentialLetters.getListOfSequentialLetters(str).includes(str)) {
+      throw new Error("Password contains sequential letters");
     } else {
       return true;
     }
