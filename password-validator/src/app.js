@@ -108,7 +108,7 @@ class PasswordValidator {
      */
   validateString(str) {
     if (typeof str !== "string") {
-      throw new TypeError("Input must be a string");
+      return false;
     } else {
       return true;
     }
@@ -124,10 +124,10 @@ class PasswordValidator {
      */
   validateLength(str, minLength, maxLength) {
     if (!minLength || !maxLength) {
-      throw new Error("A number must be sent as argument for min and max length");
+      return false;
     }
     if (str.length < minLength || str.length > maxLength) {
-      throw new RangeError(`String length must be between ${minLength} and ${maxLength}`);
+      return false;
     } else {
       return true;
     }
@@ -141,7 +141,7 @@ class PasswordValidator {
      */
   containsUppercase(str) {
     if (!/[A-Z]/.test(str)) {
-      throw new Error("String must contain at least one uppercase letter");
+      return false;
     } else {
       return true;
     }
@@ -155,7 +155,7 @@ class PasswordValidator {
      */
   containsLowercase(str) {
     if (!/[a-z]/.test(str)) {
-      throw new Error("String must contain at least one lowercase letter");
+      return false;
     } else {
       return true;
     }
@@ -169,7 +169,7 @@ class PasswordValidator {
      */
   containsDigit(str) {
     if (!/\d/.test(str)) {
-      throw new Error("String must contain at least one digit letter");
+      return false;
     } else {
       return true;
     }
@@ -183,7 +183,7 @@ class PasswordValidator {
      */
   containsSpecialChar(str) {
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(str)) {
-      throw new Error("String must contain at least one special character");
+      return false;
     } else {
       return true;
     }
@@ -197,7 +197,7 @@ class PasswordValidator {
      */
   doesNotContainWhitespace(str) {
     if (/\s/.test(str)) {
-      throw new Error("String must not contain whitespace characters");
+      return false;
     } else {
       return true;
     }
@@ -216,7 +216,7 @@ class PasswordValidator {
         return true;
       }
     }
-    throw new Error("String must not contain just one letter");
+    return false;
   }
 
   /**
@@ -228,10 +228,10 @@ class PasswordValidator {
      */
   passwordEqualToUsername(password, username) {
     if (!username) {
-      throw new Error("Username must be sent as argument");
+      return false;
     }
     if (password === username) {
-      throw new Error("Password must not be equal to username");
+      return false;
     }  else {
       return true;
     }
@@ -245,7 +245,7 @@ class PasswordValidator {
      */
   passwordIsBlacklisted(str) {
     if(this.blacklist.getBlacklist().includes(str)) {
-      throw new Error("Password is blacklisted");
+      return false;
     } else {
       return true;
     }
@@ -258,8 +258,8 @@ class PasswordValidator {
      * @throws {Error} If password is in list of sequence.
      */
   passwordContainsSequenceLetters(str) {
-    if (this.sequentialLetters.getListOfSequentialLetters(str).includes(str)) {
-      throw new Error("Password contains sequential letters");
+    if (this.SequentialLetters.getListOfSequentialLetters(str).includes(str)) {
+      return false;
     } else {
       return true;
     }
