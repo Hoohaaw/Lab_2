@@ -21,6 +21,10 @@ class Blacklist {
       this._blacklist.push(string);
     }
   }
+
+  removeFromBlacklist(string) {
+    this._blacklist = this._blacklist.filter(item => item !== string);
+  }
 }
 
 export default Blacklist;
