@@ -31,6 +31,53 @@ class PasswordValidator {
   }
 
   /**
+ * Calculates a password strength score based on how many validation rules the password passes.
+ *
+ * Each rule that passes increases the score by 1. The higher the score, the stronger the password.
+ *
+ * @param {string} password - The password to evaluate.
+ * @param {string} username - The username to compare against (used for certain rules).
+ * @returns {number} The password strength score (0 = weakest, higher = stronger).
+ */
+  passwordStrength(password, username) {
+    const score = 0;
+    if (this.validateString(password) === true) {
+      score += 1;
+    }
+    if (this.validateLength(password, this.NumberRange.getMinRange(), this.NumberRange.getMaxRange()) === true) {
+      score += 1;
+    }
+    if (this.containsUppercase(password) === true) {
+      score += 1;
+    }
+    if (this.containsLowercase(password) === true) {
+      score += 1;
+    }
+    if (this.containsDigit(password) === true) {
+      score += 1;
+    }
+    if (this.containsSpecialChar(password) === true) {
+      score += 1;
+    }
+    if (this.doesNotContainWhitespace(password) === true) {
+      score += 1;
+    }
+    if (this.containsSameCharacter(password) === true) {
+      score += 1;
+    }
+    if (this.passwordEqualToUsername(password, username) === true) {
+      score += 1;
+    }
+    if (this.passwordIsBlacklisted(password) === true) {
+      score += 1;
+    }
+    if (this.passwordContainsSequenceLetters(password) === true) {
+      score += 1;
+    }
+    return score;
+  }
+
+  /**
    * Returns the current minimum password length.
    * @returns {number} The minimum password length.
    */

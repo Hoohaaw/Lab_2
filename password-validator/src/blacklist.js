@@ -1,6 +1,11 @@
 class Blacklist {
-  constructor() {
-    this.blacklist = this.getBlacklist();
+  constructor(blacklist = []) {
+    const defaultBlacklist = [
+      "Admin",
+      "Password",
+      "User",
+    ];
+    this._blacklist = [...new Set([...defaultBlacklist, ...blacklist])];
   }
 
   /**
@@ -8,16 +13,12 @@ class Blacklist {
  * @returns {string[]} Array of blacklisted password strings.
  */
   getBlacklist() {
-    return [
-      "Admin",
-      "Password",
-      "User",
-    ];
+    return this._blacklist;
   };
 
   addToBlacklist(string) {
-    if(!this.blacklist.includes(string)) {
-      this.blacklist.push(string);
+    if(!this._blacklist.includes(string)) {
+      this._blacklist.push(string);
     }
   }
 }
