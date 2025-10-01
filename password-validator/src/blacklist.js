@@ -14,6 +14,10 @@ class Blacklist {
       "User",
     ];
   };
+
+  addToBlacklist(string) {
+    this.blacklist.push(string);
+  }
 }
 
 export default Blacklist;
