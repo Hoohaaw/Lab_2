@@ -16,7 +16,9 @@ class Blacklist {
   };
 
   addToBlacklist(string) {
-    this.blacklist.push(string);
+    if(!this.blacklist.includes(string)) {
+      this.blacklist.push(string);
+    }
   }
 }
 
