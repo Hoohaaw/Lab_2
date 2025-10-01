@@ -13,6 +13,9 @@ password-validator.config.js
 # Reflections for school assignment
 reflections/
 
+# Test rapport for school assignment
+testrapport.md
+
 # Coverage reports
 coverage/
 
