@@ -1,39 +1,9 @@
-# Class numberRange
-This class handles minimum and maximum values in the validation process.
+# Naming overview
 
-I am struggling with the naming of this class. In some ways I feel like it is proper. However, I know that there could be some confusion, for sure. I got caught in a little bit of a development trap with this class. It was one of the first extension classes that I made in this project. And to just make sure it worked i used the first name that came to mind. Now after some time I do realize that a numberRange is a set of numbers between two points. But in this classes case the functionallity of the class is just to limit the validation process to check if a password is between the minimum and maximum set value. And to further increase the quality of the name according to the course literature a name change to the following names would show the classes use context: 
-
-- LengthValidator
-- RangeValidator
-- BoundryValidator
-
-Or something along these lines!
-
-
-# Class sequentialLetters
-This class checks if a string contains a predictable sequence of letters.
-
-The book emphasizes naming conventions that make sense in context. I’ve tried to follow that idea here. Instead of stuffing this functionality into the main class, I separated it into its own class since it would otherwise hold a lot of extra logic. I think the name does a decent job of telling you what it does — detect sequences of letters. However, a good quality password rarely has just letters. It includes numbers and special characters. To be extra clear to the user/developer the class could benefit from a more descriptive name. That atleast includes the all the forms of characters that it is checking against. Something like SequenceCharacters, SequenceValidator, would improve readability, for sure.
-
-
-# Class blacklist 
-This class manages words that are not allowed as passwords.
-
-Here I see room for improvement. A class named blacklist in a password validator might feel a little confusing or even misleading at first. The comments and the actual functionality make the purpose clearer, but still, the name could probably be better. According to the book’s author, naming like this isn’t ideal since it might not fully reveal its intention at first glance. Something like ForbiddenWords or DisallowedPasswords might have been clearer.
-
-
-
-# function passwordStrength(password, username)
-This function assigns a score to a password depending on how it passes the validation rules.
-
-The goal of this function is to give developers an idea of how strong a password is, and potentially provide that feedback to the user. It's meant as encouragement for users to create stronger passwords. The name itself is pretty clear — it describes both what it evaluates (the password) and what the output is (strength). However to further increase the understandability and also tie in what the book says about method names there could be improvements. Since we are getting a value back from the function it could be nice to display that in the name. Example: getPasswordStrengthValue.  
-
-
-
-# function validate(password, username)
-This function runs the password through the actual validation process.
-
-Since this is the main public function, it was important that the name is simple, clear, and intention-revealing. Following the principle of Intention-Revealing Names from the book, I’d say this one is spot on. It tells you exactly what it does: validate a password. Homerun!
-
-There’s a quote in the book: “The name of a variable, function, or class, should answer all the big questions. It should tell you why it exists, what it does, and how it is used.”
-With validate, I really think I achieved that. The function validates passwords, just as developers would expect, and that’s also the core purpose of this library.
+| Name | Description | Reflection |
+|------|-------------|------------|
+| Class numberRange | This class handles minimum and maximum values in the validation process. | I am struggling with the naming of this class. In some ways I feel like it is proper. However, I know that there could be some confusion, for sure. I got caught in a little bit of a development trap with this class. It was one of the first extension classes that I made in this project. And to just make sure it worked i used the first name that came to mind. Now after some time I do realize that a numberRange is a set of numbers between two points. But in this classes case the functionallity of the class is just to limit the validation process to check if a password is between the minimum and maximum set value. And to further increase the quality of the name according to the course literature a name change to the following names would show the classes use context: <br><br>- LengthValidator <br>- RangeValidator <br>- BoundryValidator <br><br>Or something along these lines! |
+| Class sequentialLetters | This class checks if a string contains a predictable sequence of letters. | The book emphasizes naming conventions that make sense in context. I’ve tried to follow that idea here. Instead of stuffing this functionality into the main class, I separated it into its own class since it would otherwise hold a lot of extra logic. I think the name does a decent job of telling you what it does — detect sequences of letters. However, a good quality password rarely has just letters. It includes numbers and special characters. To be extra clear to the user/developer the class could benefit from a more descriptive name. That atleast includes the all the forms of characters that it is checking against. Something like SequenceCharacters, SequenceValidator, would improve readability, for sure. |
+| Class blacklist | This class manages words that are not allowed as passwords. | Here I see room for improvement. A class named blacklist in a password validator might feel a little confusing or even misleading at first. The comments and the actual functionality make the purpose clearer, but still, the name could probably be better. According to the book’s author, naming like this isn’t ideal since it might not fully reveal its intention at first glance. Something like ForbiddenWords or DisallowedPasswords might have been clearer. |
+| function passwordStrength(password, username) | This function assigns a score to a password depending on how it passes the validation rules. | The goal of this function is to give developers an idea of how strong a password is, and potentially provide that feedback to the user. It's meant as encouragement for users to create stronger passwords. The name itself is pretty clear — it describes both what it evaluates (the password) and what the output is (strength). However to further increase the understandability and also tie in what the book says about method names there could be improvements. Since we are getting a value back from the function it could be nice to display that in the name. Example: getPasswordStrengthValue. |
+| function validate(password, username) | This function runs the password through the actual validation process. | Since this is the main public function, it was important that the name is simple, clear, and intention-revealing. Following the principle of Intention-Revealing Names from the book, I’d say this one is spot on. It tells you exactly what it does: validate a password. Homerun!<br><br>There’s a quote in the book: “The name of a variable, function, or class, should answer all the big questions. It should tell you why it exists, what it does, and how it is used.”<br>With validate, I really think I achieved that. The function validates passwords, just as developers would expect, and that’s also the core purpose of this library. |
