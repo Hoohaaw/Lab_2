@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1759351415756" clover="3.2.0">
-  <project timestamp="1759351415756" name="All files">
+<coverage generated="1759352086243" clover="3.2.0">
+  <project timestamp="1759352086243" name="All files">
     <metrics statements="109" coveredstatements="54" conditionals="66" coveredconditionals="38" methods="33" coveredmethods="21" elements="208" coveredelements="113" complexity="0" loc="109" ncloc="109" packages="1" files="5" classes="5"/>
     <file name="app.js" path="C:\Users\alexp\Desktop\school\1dv610\Lab_2\password-validator\src\app.js">
       <metrics statements="88" coveredstatements="41" conditionals="59" coveredconditionals="35" methods="20" coveredmethods="11"/>
